@@ -1,0 +1,21 @@
+--- a/build.xml
++++ b/build.xml
+@@ -171,7 +171,7 @@
+ 
+     <!-- It's an ugly quick hack. Maybe some day there will be a cleaner
+          version (e.g. by using Maven). -->
+-    <target name="maven" depends="dist, doc, jar"
++    <target name="maven" depends="dist, jar"
+             description="Creates the files for a Maven repository">
+         <mkdir dir="${maven_dir}"/>
+ 
+@@ -187,9 +187,6 @@
+         <copy file="${jar_dir}/xz.jar" tofile="${maven_dir}/xz-${version}.jar"
+               preservelastmodified="true" overwrite="true"/>
+ 
+-        <jar destfile="${maven_dir}/xz-${version}-javadoc.jar"
+-             basedir="${doc_dir}"/>
+-
+         <jar destfile="${maven_dir}/xz-${version}-sources.jar">
+             <fileset dir="${src_dir}" includes="org/tukaani/xz/**"/>
+             <zipfileset prefix="META-INF/versions/9/" dir="${src9_dir}"/>

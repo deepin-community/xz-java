@@ -1,0 +1,1 @@
+build/maven/xz.pom --has-package-version --java-lib --artifact=build/jar/xz.jar
